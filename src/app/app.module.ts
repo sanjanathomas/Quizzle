@@ -14,6 +14,11 @@ import { VerifyComponent } from './verify/verify.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoginPageGuard } from './login/login.route-guard';
 import { HomePageGuard } from './home/home.route-guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { HomePageGuard } from './home/home.route-guard';
     AppRoutingModule,
     MatCardModule,
     MatTableModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [LoginPageGuard, HomePageGuard],
   bootstrap: [AppComponent]

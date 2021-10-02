@@ -5,3 +5,42 @@
 .architecture-card {
     max-width: 400px;
   }
+
+  .subject-icons {
+    transform: scale(.1);
+  }
+
+  .card-img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    max-width: 30%;
+    height: auto;
+    margin-top: -3rem;
+  }
+
+  .create-btn {
+    margin-right: 3.5rem;
+  }
+
+  .card-text {
+    padding: inherit;
+  }
+
+  .example-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
