@@ -1,7 +1,16 @@
 <div class="container score-container">
-    <div>
+    <div class="d-flex">
+      <div class="col-sm-9">
         <h3>View Scores</h3>
-        <!-- <hr> -->
+      </div>
+      <div class="col-sm-3">
+        <select class="form-select subject-select" aria-label="Default select example">
+          <option selected>Select subject</option>
+          <option value="1">AWS Architecture</option>
+          <option value="2">Physics</option>
+          <option value="3">Electronics</option>
+        </select>
+      </div>
     </div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 score-table">
 

@@ -17,7 +17,8 @@ import { HomePageGuard } from './home/home.route-guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -39,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatSelectModule,
     BrowserAnimationsModule
   ],
   providers: [LoginPageGuard, HomePageGuard],

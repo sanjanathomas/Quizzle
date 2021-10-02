@@ -8,3 +8,8 @@
 .score-container {
     margin-top: 6%;
 }
+
+.subject-select {
+    outline: none;
+    box-shadow: none;
+}
