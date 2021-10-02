@@ -1,6 +1,6 @@
 .solve-container {
     margin-top: 7%;
-    margin-left: 4%;
+    margin-left: 3rem;
 }
 
 #SaveButton {
@@ -15,4 +15,13 @@
 .load-button:focus {
     outline: none;
     box-shadow: none;
+}
+
+.ms-6 {
+    margin-left: 4rem;
+}
+
+#mySavedModel {
+    margin: 1rem 4rem;
+    width: 90%;
 }
