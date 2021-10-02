@@ -17,7 +17,7 @@
               <div class="row subject-row">
                 <div class="col p-5 col-sm-4" *ngFor="let subject of subjects; let i = index">
                 <div class="card">
-                  <div class="card-body">
+                  <div class="card-body pointer-c" (click)="goToSolve()">
                     <div class="d-flex">
                       <h5 class="card-title col-sm-7">{{subject.name}}</h5>
                       <img class="stu-card-img-thumbnail col-sm-5" src='{{icons[i].imageSrc}}'/>

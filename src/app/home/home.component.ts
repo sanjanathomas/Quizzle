@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatAccordion} from '@angular/material/expansion';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   accordionIndexOne : boolean = true;
   accordionIndexTwo : boolean = false;
-  constructor() { }
+  constructor(private router: Router) { }
 
 
   ngOnInit(): void {
@@ -38,5 +38,9 @@ export class HomeComponent implements OnInit {
       this.accordionIndexTwo = !this.accordionIndexTwo;
       this.accordionIndexOne = false;
     }
+  }
+
+  goToSolve() {
+    this.router.navigate(["/solve"])
   }
 }

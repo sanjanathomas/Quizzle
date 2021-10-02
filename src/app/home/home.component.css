@@ -66,3 +66,7 @@
     outline: none;
     box-shadow: none;
   }
+
+  .pointer-c {
+    cursor: pointer;
+  }

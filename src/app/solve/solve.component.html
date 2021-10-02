@@ -1,12 +1,12 @@
-<div style="width: 50%; display: flex; justify-content: space-between">
+<div class="solve-container container" style="width: 50%; display: flex; justify-content: space-between">
     <div id="myPaletteDiv"
         style="width: 105px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black"></div>
     <div id="myDiagramDiv" style="flex-grow: 1; height: 620px; border: solid 1px black"></div>
 </div>
 
-<div>
-    <button id="SaveButton" (click)="save()">Save</button>
-    <button (click)="load()">Load</button>
+<div class="container mt-3 mb-3">
+    <button class="btn btn-primary" id="SaveButton" (click)="save()">Save</button>
+    <button class="btn btn-primary load-button" (click)="load()">Load</button>
     Diagram Model saved in JSON format:
 </div>
 
