@@ -14,6 +14,7 @@ import { VerifyComponent } from './verify/verify.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoginPageGuard } from './login/login.route-guard';
 import { HomePageGuard } from './home/home.route-guard';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomePageGuard } from './home/home.route-guard';
     AppRoutingModule,
     MatCardModule,
     MatTableModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FormsModule
   ],
   providers: [LoginPageGuard, HomePageGuard],
   bootstrap: [AppComponent]

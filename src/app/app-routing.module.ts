@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { HomePageGuard } from './home/home.route-guard';
 import { LoginComponent } from './login/login.component';
 import { LoginPageGuard } from './login/login.route-guard';
+import { SolveComponent } from './solve/solve.component';
 import { VerifyComponent } from './verify/verify.component';
 import { ViewScoreComponent } from './view-score/view-score.component';
 
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'scores',
     component: ViewScoreComponent
+  },
+  {
+    path: 'solve',
+    component: SolveComponent
   },
   {
     path: 'verify',
