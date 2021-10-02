@@ -31,6 +31,7 @@ export class ViewScoreComponent implements OnInit {
   
   displayedColumns: string[] = ['id', 'name', 'score', 'grade'];
   dataSource = ELEMENT_DATA;
+  subject: String = "";
 
   ngOnInit(): void {
   }

@@ -34,19 +34,21 @@
     width: 20%;
     justify-content: center;
     color: #fff;
+    outline: none;
+}
+
+.login-btn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .image-div
 {
     margin-left: 20%;
-    /* background: #fff; */
     display: block;
     height: 400px;
     padding: 10px;
     border-radius: 2px 2px 2px 2px;
-    /* -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; */
-    /* -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; */
-    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; */
 }
 
 .bottom-div

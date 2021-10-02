@@ -1,32 +1,76 @@
 <p></p>
 <div class="container dashboard">
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a routerLink="/puzzle" class="btn btn-primary">Create puzzle</a>
+
+  
+  <div class="container p-5">
+    <h3 class="mt-5 mb-5">Dashboard</h3>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item custom-acc-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" [ngClass]="{ 'collapsed': !accordionIndexOne}" (click)="toggleAccordionIndex(1)" type="button" data-bs-toggle="collapse" attr.data-bs-target="#collapseOne" aria-expanded="true" attr.aria-controls="collapseOne">
+              Students
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" [ngClass]="{ 'show': accordionIndexOne }" attr.aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="row subject-row">
+                <div class="col p-5 col-sm-4" *ngFor="let subject of subjects; let i = index">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <h5 class="card-title col-sm-7">{{subject.name}}</h5>
+                      <img class="stu-card-img-thumbnail col-sm-5" src='{{icons[i].imageSrc}}'/>
+                    </div>
+                    <p class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a routerLink="/puzzle" class="btn btn-primary">Create puzzle</a>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button" [ngClass]="{ 'collapsed': !accordionIndexTwo}" (click)="toggleAccordionIndex(2)" type="button" data-bs-toggle="collapse" attr.data-bs-target="#collapseTwo" aria-expanded="true" attr.aria-controls="collapseTwo">
+              Professor
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" [ngClass]="{ 'show': accordionIndexTwo }" attr.aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="row subject-row">
+                <div class="col p-5 col-sm-4" *ngFor="let subject of subjects; let i = index">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{subject.name}}</h5>
+                    <p class="card-text">
+                      <a routerLink="/puzzle" class="btn btn-primary create-btn">Create puzzle</a>
+                      <img class="card-img-thumbnail" src='{{icons[i].imageSrc}}'/>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row subject-row">
+              <div class="col p-5 col-sm-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Scores</h5>
+                  <p class="card-text">
+                    <a routerLink="/scores" class="btn btn-primary create-btn">View Scores</a>
+                    <img class="score-img card-img-thumbnail" src='../../assets/images/score.png'/>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a routerLink="/puzzle" class="btn btn-primary">Create puzzle</a>
             </div>
           </div>
+        </div>
+
       </div>
+     
     </div>
+        
   </div>
