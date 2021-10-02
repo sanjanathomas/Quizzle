@@ -1,5 +1,5 @@
 .dashboard {
-    margin-top: 11%;
+    margin-top: 3%;
 }
 
 .architecture-card {
@@ -16,15 +16,32 @@
     border-radius: .25rem;
     max-width: 30%;
     height: auto;
-    margin-top: -3rem;
+    margin-top: -.5rem;
+    margin-left: 2rem;
+  }
+
+  .stu-card-img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    max-width: 30%;
+    height: auto;
+    margin-top: -.5rem;
+    margin-left: 2rem;
+  }
+
+  .score-img {
+    transform: scale(1.8);
+    margin-top: -3.5rem;
+    margin-left: 3rem;
   }
 
   .create-btn {
-    margin-right: 3.5rem;
+    margin-top: 1rem;
   }
 
   .card-text {
-    padding: inherit;
+    /* padding: inherit; */
   }
 
   .example-action-buttons {
@@ -43,4 +60,9 @@
   
   .example-headers-align .mat-form-field + .mat-form-field {
     margin-left: 8px;
+  }
+
+  .accordion-button:focus {
+    outline: none;
+    box-shadow: none;
   }

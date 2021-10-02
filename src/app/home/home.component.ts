@@ -22,15 +22,21 @@ export class HomeComponent implements OnInit {
     {id:3, imageSrc: "../../assets/images/electronics.png"},
   ]  
 
-  accordionIndex : number = 0
+  accordionIndexOne : boolean = true;
+  accordionIndexTwo : boolean = false;
   constructor() { }
 
-  selectedData = [{ id: 1}, { id: 2}];
 
   ngOnInit(): void {
   }
 
-  setAccordionIndex(index: number) : void {
-    this.accordionIndex = index
+  toggleAccordionIndex(index: number) : void {
+    if(index == 1) {
+      this.accordionIndexOne = !this.accordionIndexOne;
+      this.accordionIndexTwo = false;
+    } else if(index ==2) {
+      this.accordionIndexTwo = !this.accordionIndexTwo;
+      this.accordionIndexOne = false;
+    }
   }
 }
