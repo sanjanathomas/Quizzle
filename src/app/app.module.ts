@@ -10,6 +10,10 @@ import { SolveComponent } from './solve/solve.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { LoginComponent } from './login/login.component';
+import { VerifyComponent } from './verify/verify.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoginPageGuard } from './login/login.route-guard';
+import { HomePageGuard } from './home/home.route-guard';
 
 @NgModule({
   declarations: [
@@ -18,15 +22,17 @@ import { LoginComponent } from './login/login.component';
     CreatePuzzleComponent,
     ViewScoreComponent,
     SolveComponent,
-    LoginComponent
+    LoginComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    NgxSpinnerModule
   ],
-  providers: [],
+  providers: [LoginPageGuard, HomePageGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
