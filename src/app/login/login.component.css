@@ -1,5 +1,6 @@
 .login-container {
     margin-top: 18%;
+    height: 50px;
     /* background-color: #6eb4f1; */
 }
 .first-box {
@@ -15,7 +16,7 @@
     display: flex;
     width: 50%;
     justify-content: center;
-    margin-top: 11%;
+    margin-top: 10%;
 }
 
 .base-text {
@@ -23,6 +24,16 @@
     display: flex;
     width: 50%;
     justify-content: center;
+}
+
+.login-btn {
+    background-color: #fe537a;
+    border-color: #fe537a;
+    margin-left: 15%;
+    margin-top: 10%;
+    width: 20%;
+    justify-content: center;
+    color: #fff;
 }
 
 .image-div
