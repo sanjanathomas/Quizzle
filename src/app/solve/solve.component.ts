@@ -31,22 +31,27 @@ export class SolveComponent implements OnInit {
              }
 
              startTimer() {
-              this.counter = { hr:0, min: 30, sec: 0 } // choose whatever you want
+              this.counter = { hr:0, min: 1, sec: 0 } // choose whatever you want
               let intervalId = setInterval(() => {
                 if (this.counter.sec - 1 == -1) {
                   this.counter.min -= 1;
                   this.counter.sec = 59
-                } else if(this.counter.min - 1 == -1) {
+                } else if(this.counter.min == -1) {
                   this.counter.hr -= 1;
                   this.counter.min = 59
                 }
                 else this.counter.sec -= 1
-                if (this.counter.min === 0 && this.counter.sec == 0) clearInterval(intervalId)
+                if (this.counter.min === 0 && this.counter.sec == 0) {
+                  clearInterval(intervalId);
+                  this.openOopsToaster();
+                  this.router.navigate(['home']);
+                }
               }, 1000)
             }
 
   @ViewChild('mySavedModel')
   public mySaveModel : ElementRef;
+
   myDiagram: any;
   jsonValue: string;
 
@@ -346,6 +351,10 @@ export class SolveComponent implements OnInit {
 
   openToaster() {
     this.toaster.show('Perfect Answer!', { classname: 'bg-success text-light', delay: 3000 });
+  }
+
+  openOopsToaster() {
+    this.toaster.show('Oops!! Time Over!', { classname: 'bg-danger text-light', delay: 3000 });
   }
 
   openSnackBar() {
