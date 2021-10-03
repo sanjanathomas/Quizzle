@@ -70,3 +70,9 @@
     background-size: contain;
     background-image: url("../../assets/images/loginImage.jpeg");
 }
+
+.sample {
+    margin-top: 29rem;
+    float: right;
+    margin-right: 15px;
+}
