@@ -10,7 +10,7 @@ import { Auth } from 'aws-amplify';
 
 export class AppComponent implements OnInit {
   title = 'quizzle';
-  email: string = '';
+  email: string = 'a.gmail';
 
   constructor(public url: LocationStrategy) { }
 
