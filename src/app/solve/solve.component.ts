@@ -15,11 +15,35 @@ import { ToastService } from '../toast/toast-service';
 })
 
 export class SolveComponent implements OnInit {
+  idleState = 'Not started.';
+  timedOut = false;
+  lastPing? = null;
+  // counter = 300
+  counter: { hr:number, min: number, sec: number }
+     
 
   constructor(public dialog: MatDialog,
              private _snackBar: MatSnackBar,
              private toaster: ToastService,
-             private router: Router) {}
+             private router: Router) {
+
+              this.startTimer()
+             }
+
+             startTimer() {
+              this.counter = { hr:0, min: 30, sec: 0 } // choose whatever you want
+              let intervalId = setInterval(() => {
+                if (this.counter.sec - 1 == -1) {
+                  this.counter.min -= 1;
+                  this.counter.sec = 59
+                } else if(this.counter.min - 1 == -1) {
+                  this.counter.hr -= 1;
+                  this.counter.min = 59
+                }
+                else this.counter.sec -= 1
+                if (this.counter.min === 0 && this.counter.sec == 0) clearInterval(intervalId)
+              }, 1000)
+            }
 
   @ViewChild('mySavedModel')
   public mySaveModel : ElementRef;
@@ -352,6 +376,36 @@ export class SolveComponent implements OnInit {
     var pos = this.myDiagram.model.modelData.position;
     if (pos) this.myDiagram.initialPosition = go.Point.parse(pos);
   }
+
+   //here you're making new Date object
+    // this.yourDateToGo.setDate(yourDateToGo.getDate() + 1); //your're setting date in this object 1 day more from now
+    //you can change number of days to go by putting any number in place of 1
+
+    // timing = setInterval( // you're making an interval - a thing, that is updating content after number of miliseconds, that you're writing after comma as second parameter
+    //   function () {
+
+    //     var currentDate = new Date().getTime(); //same thing as above
+        // var timeLeft = yourDateToGo - currentDate; //difference between time you set and now in miliseconds
+
+        // var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)); //conversion miliseconds on days 
+        // if (days < 10) 
+        //   days="0"+days; //if number of days is below 10, programm is writing "0" before 9, that's why you see "09" instead of "9"
+        // var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); //conversion miliseconds on hours
+        // if (hours < 10) hours="0"+hours;
+        // var minutes = 35 //conversion miliseconds on minutes 
+        // if (minutes < 10) {minutes="0"+minutes;}
+        // var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);//conversion miliseconds on seconds
+        // if (seconds < 10) seconds="0"+seconds;
+
+        // var counter = document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s"; // putting number of days, hours, minutes and seconds in div, 
+        //which id is countdown
+
+      //   if (timeLeft <= 0) {
+      //     clearInterval(timing);
+      //     document.getElementById("countdown").innerHTML = "It's over"; //if there's no time left, programm in this 2 lines is clearing interval (nothing is counting now) 
+      //     //and you see "It's over" instead of time left
+      //   }
+      // }, 1000);
 
 
 }

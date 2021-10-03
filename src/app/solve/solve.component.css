@@ -37,3 +37,14 @@
     width: 100%;
     justify-content: flex-end;
 }
+
+.counter {
+    justify-content: flex-end;
+    margin-left: -6rem;
+}
+
+.counter-text {
+    padding: 10px;
+    font-size: 35px;
+    margin-top: -1.5rem;
+}
