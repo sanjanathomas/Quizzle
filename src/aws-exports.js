@@ -12,8 +12,8 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "http://localhost:4200/verify",
-        "redirectSignOut": "http://localhost:4200/login",
+        "redirectSignIn": "https://hackdfw-quizzle.s3.us-east-2.amazonaws.com/verify",
+        "redirectSignOut": "https://hackdfw-quizzle.s3.us-east-2.amazonaws.com/login",
         "responseType": "code"
     }
 };

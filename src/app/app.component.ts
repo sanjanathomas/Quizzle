@@ -10,7 +10,7 @@ import { Auth } from 'aws-amplify';
 
 export class AppComponent implements OnInit {
   title = 'quizzle';
-  email: string = 'a.gmail';
+  email: string = '';
 
   constructor(public url: LocationStrategy) { }
 
@@ -18,6 +18,11 @@ export class AppComponent implements OnInit {
     Auth.currentAuthenticatedUser()
       .then(user => {
         this.email = user.attributes.email;
+        Auth.currentAuthenticatedUser()
+          .then(user => {
+            this.email = user.attributes.email;
+          })
+          .catch(() => console.log('Not signed in')); 
       })
       .catch(() => console.log('Not signed in'));
   }
