@@ -1,14 +1,20 @@
+<div class="question container">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter question" aria-label="question" aria-describedby="basic-addon1">
+      </div>
+</div>
+
 <div class="create-container container" style="display: flex; justify-content: space-between">
-    <div id="myPaletteDiv" style="width: 105px; background-color: whitesmoke; border: solid 1px black"></div>
-    <div id="myDiagramDiv" style="flex-grow: 1; height: 620px; border: solid 1px black"></div>
+    <div id="myPaletteDiv" style="width: 200px; background-color: whitesmoke; border: solid 1px black"></div>
+    <div id="myDiagramDiv" style="flex-grow: 1; height: 500px; border: solid 1px black"></div>
 </div>
 
-<div class="container ms-5 mt-3 mb-3">
+<div class="container save-container ms-5 mt-3 mb-3">
     <button class="btn btn-primary" id="SaveButton" (click)="save()">Save</button>
-    <button class="btn btn-primary load-button" (click)="load()">Load</button>
+    <!-- <button class="btn btn-primary load-button" (click)="load()">Load</button> -->
 </div>
 
-<label class="ms-6" for="mySavedModel">Diagram Model saved in JSON format:</label>
+<!-- <label class="ms-6" for="mySavedModel">Diagram Model saved in JSON format:</label>
 <textarea id="mySavedModel" style="height:300px" [(ngModel)]="jsonValue">
     { "class": "GraphLinksModel",
     "linkFromPortIdProperty": "fromPort",
@@ -19,4 +25,4 @@
   {"text":"End","figure":"Ellipse","size":"75 75","fill":"#CE0620","key":-5,"loc":"-130 150"}
   ],
     "linkDataArray": []}
-        </textarea>
+        </textarea> -->

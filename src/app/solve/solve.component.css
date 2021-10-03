@@ -1,5 +1,5 @@
 .solve-container {
-    margin-top: 7%;
+    /* margin-top: 7%; */
     margin-left: 3rem;
 }
 
@@ -24,4 +24,16 @@
 #mySavedModel {
     margin: 1rem 4rem;
     width: 90%;
+}
+
+.question {
+    margin-top: 7%;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.save-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
 }

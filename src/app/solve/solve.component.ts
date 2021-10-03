@@ -1,6 +1,10 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import * as go from 'gojs';
 import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angular';
+import { PopUpComponent } from '../pop-up/pop-up.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solve',
@@ -10,6 +14,8 @@ import { DataSyncService, DiagramComponent, PaletteComponent } from 'gojs-angula
 })
 
 export class SolveComponent implements OnInit {
+
+  constructor(public dialog: MatDialog,private _snackBar: MatSnackBar, private router: Router) {}
 
   @ViewChild('mySavedModel')
   public mySaveModel : ElementRef;
@@ -141,7 +147,16 @@ export class SolveComponent implements OnInit {
               wrap: go.TextBlock.WrapFit,
               editable: true
             },
-            new go.Binding("text").makeTwoWay())
+            new go.Binding("text").makeTwoWay()),
+            $(go.Picture,
+              { 
+                margin: 2,
+                width: 75,
+                height: 60,
+                background: null,
+                imageStretch: go.GraphObject.Fill
+              },
+              new go.Binding("source").makeTwoWay())
         ),
         // four small named ports, one on each side:
         makePort("T", go.Spot.Top, false, true),
@@ -247,12 +262,18 @@ export class SolveComponent implements OnInit {
                 { toArrow: "Standard", stroke: null })
             ),
           model: new go.GraphLinksModel([  // specify the contents of the Palette
-            { text: "Start", figure: "Ellipse", "size": "75 75", fill: "#00AD5F" },
-            { text: "Step" },
-            { text: "DB", figure: "Database", fill: "lightgray" },
-            { text: "???", figure: "Diamond", fill: "lightskyblue" },
-            { text: "End", figure: "Ellipse", "size": "75 75", fill: "#CE0620" },
-            { text: "Comment", figure: "RoundedRectangle", fill: "lightyellow" }
+            // { text: "Start", figure: "Ellipse", "size": "75 75", fill: "#8ea372" },
+            // { text: "Step" },
+            // { text: "AWS", source: "assets/images/aws.jpeg", "size": "75 75" },
+            { text: "", source: "assets/images/or.png" },
+            { text: "", source: "assets/images/not.png" },
+            { text: "", source: "assets/images/nand.png" },
+            { text: "", source: "assets/images/and.png" },
+            { text: "", source: "assets/images/nor.png" },
+            // { text: "DB", figure: "Database", fill: "#77c6e6" },
+            // { text: "???", figure: "Diamond", fill: "lightskyblue" , "size": "70 70"},
+            // { text: "End", figure: "Ellipse", "size": "75 75", fill: "#bf4551" },
+            // { text: "Comment", figure: "RoundedRectangle", fill: "lightyellow" }
           ], [
             // the Palette also has a disconnected Link, which the user can drag-and-drop
             { points: new go.List(/*go.Point*/).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]) }
@@ -291,6 +312,22 @@ export class SolveComponent implements OnInit {
     this.saveDiagramProperties();  // do this first, before writing to JSON
     this.jsonValue = this.myDiagram.model.toJson();
     this.myDiagram.isModified = false;
+    this.openSnackBar();
+    // this.router.navigate(['/home'])
+  }
+
+  openSnackBar() {
+    this._snackBar.open("Success");
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PopUpComponent, {
+      width: '250px',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 
   saveDiagramProperties() {

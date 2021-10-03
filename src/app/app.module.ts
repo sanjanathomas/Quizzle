@@ -21,6 +21,9 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     ViewScoreComponent,
     SolveComponent,
     LoginComponent,
-    VerifyComponent
+    VerifyComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,11 @@ import { FormsModule } from '@angular/forms';
     MatExpansionModule,
     MatFormFieldModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
-  providers: [LoginPageGuard, HomePageGuard],
+  providers: [LoginPageGuard, HomePageGuard, PopUpComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
