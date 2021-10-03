@@ -18,11 +18,6 @@ export class AppComponent implements OnInit {
     Auth.currentAuthenticatedUser()
       .then(user => {
         this.email = user.attributes.email;
-        Auth.currentAuthenticatedUser()
-          .then(user => {
-            this.email = user.attributes.email;
-          })
-          .catch(() => console.log('Not signed in')); 
       })
       .catch(() => console.log('Not signed in'));
   }
