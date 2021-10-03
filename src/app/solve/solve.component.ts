@@ -5,6 +5,7 @@ import { PopUpComponent } from '../pop-up/pop-up.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { ToastService } from '../toast/toast-service';
 
 @Component({
   selector: 'app-solve',
@@ -15,7 +16,10 @@ import { Router } from '@angular/router';
 
 export class SolveComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,private _snackBar: MatSnackBar, private router: Router) {}
+  constructor(public dialog: MatDialog,
+             private _snackBar: MatSnackBar,
+             private toaster: ToastService,
+             private router: Router) {}
 
   @ViewChild('mySavedModel')
   public mySaveModel : ElementRef;
@@ -312,8 +316,12 @@ export class SolveComponent implements OnInit {
     this.saveDiagramProperties();  // do this first, before writing to JSON
     this.jsonValue = this.myDiagram.model.toJson();
     this.myDiagram.isModified = false;
-    this.openSnackBar();
-    // this.router.navigate(['/home'])
+    this.openToaster();
+    this.router.navigate(['/home'])
+  }
+
+  openToaster() {
+    this.toaster.show('Perfect Answer!', { classname: 'bg-success text-light', delay: 3000 });
   }
 
   openSnackBar() {
